@@ -1,3 +1,11 @@
-# Reti Informatiche
-Viene proposto un gioco stile Escape Room, dove per vincere c'è bisogno di disinnescare una bomba.
-Nella documentazione viene spiegato il funzionamento del gioco, e com'è stato strutturato.
+Escape Room TCP - Reti Informatiche
+
+Questo repository contiene l'intero codice sorgente e la documentazione sviluppati per il progetto didattico del Corso di Laurea in Ingegneria Informatica dell'Università di Pisa, corso di Reti Informatiche (A.A. 2023/2024)[cite: 3].
+
+**Panoramica del Progetto:** L'obiettivo del progetto è lo sviluppo di un'applicazione distribuita client-server che implementa il gioco dell'escape room in uno scenario digitale[cite: 3]. La comunicazione tra client e server avviene tramite protocollo TCP, dando priorità alla sicurezza della trasmissione dei messaggi attraverso un formato testuale e socket di tipo bloccante[cite: 2]. Il sistema ottimizza lo scambio di dati utilizzando un buffer di dimensione fissa di 1024 byte per client e server, appoggiandosi a un server iterativo basato su I/O Multiplexing in grado di gestire fino a 16 utenti connessi simultaneamente[cite: 2]. Il client è stato implementato seguendo il modello del thin-client, delegando le funzionalità logiche al server per alleggerire il carico locale[cite: 2].
+
+Il sistema integrato è in grado di:
+- **Gestire l'esplorazione e l'interazione** all'interno della stanza, permettendo al giocatore tramite appositi comandi di esaminare locazioni, raccogliere oggetti liberi o sbloccare quelli protetti tramite la risoluzione logica di enigmi testuali[cite: 3].
+- **Simulare scenari di gioco a tempo**, come la stanza con la bomba (livello "Facile"), dove l'utente deve combinare strumenti specifici, ad esempio utilizzando una torcia a luce ultravioletta su un cassetto o tagliando cavi con delle forbici, per disinnescare l'ordigno[cite: 2].
+- **Implementare una modalità cooperativa asincrona (Funzionalità Aggiuntiva)** in cui un giocatore secondario (utente del dark web) può connettersi e comunicare tramite un portatile virtuale con il giocatore principale, aiutandolo a risolvere gli elementi della bomba in cambio di bitcoin (token) collezionati nella stanza[cite: 2].
+- **Elaborare input tramite CLI (Command Line Interface)** interattiva (es. `start`, `look`, `take`, `use`), fornendo feedback dinamico sullo stato della partita, il numero di token raccolti e il conto alla rovescia del tempo rimanente[cite: 3].
